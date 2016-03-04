@@ -1,0 +1,19 @@
+public class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> rs = new ArrayList<List<Integer>>();
+        
+        for(int i = 1 ;i<=numRows ; i++){
+            int s = 1;
+            List<Integer> item = new ArrayList<Integer>();
+            item.add(1);
+            for(int j = 1;j<i-1;j++){
+                s = (i-j)*s/j;//杨辉三角重要的公式
+                item.add(s);
+            }
+            if(i!=1)item.add(1);
+            rs.add(item);
+        }
+        return rs;
+        
+    }
+}
